@@ -12,6 +12,7 @@
       href="images/file_0000000039d4620a9e73440a40f94f3d (1).png"
     />
     <title>Mega Stock Mart</title>
+    <style>html{scroll-behavior:smooth;}</style>
   </head>
   <body>
     <!-- Navbar section -->
@@ -48,35 +49,36 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <form class="d-flex mx-auto" style="max-width: 400px">
+            <form class="d-flex mx-auto" style="max-width: 400px" onsubmit="return false;">
               <input
+                id="navbarSearchInput"
                 class="form-control me-2"
                 type="search"
                 placeholder="Search for products, lots, or categories..."
                 aria-label="Search"
               />
-              <button class="btn btn-outline-primary" type="submit">
+              <button class="btn btn-outline-primary" type="button" onclick="performSearch()">
                 <i class="fas fa-search"></i>
               </button>
             </form>
             <ul class="navbar-nav ms-auto align-items-center">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Brands</a>
+                <a class="nav-link" href="#all-lots">All Lots/ Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">All Lots/ Products</a>
+                <a class="nav-link" href="#how-it-works">How It Works</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">How It Works</a>
+                <a class="nav-link" href="#testimonials">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Reviews</a>
+                <a class="nav-link" href="#partners">Brands</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
               <li class="nav-item ms-3">
                 <a class="btn btn-outline-primary" href="#"
@@ -89,7 +91,7 @@
       </nav>
     </section>
 
-    <section
+    <section id="home"
       class="hero-section position-relative"
       style="
         background: url('images/dennis-siqueira-QnMeRW36-zY-unsplash.jpg')
@@ -213,10 +215,12 @@
         <div class="mb-4">
           <div class="input-group mx-auto" style="max-width: 600px">
             <input
+              id="mainSearchInput"
               class="form-control"
               placeholder="Search for products, lots, or categories..."
+              onkeyup="performSearch()"
             />
-            <button class="btn btn-outline-secondary">
+            <button class="btn btn-outline-secondary" type="button" onclick="performSearch()">
               <i class="fas fa-search"></i>
             </button>
           </div>
@@ -2320,7 +2324,7 @@
 
     <!-- How it works  -->
 
-    <section class="how-it-works py-5">
+    <section id="how-it-works" class="how-it-works py-5">
       <div class="container text-center">
         <h2 class="mb-2">How It Works</h2>
         <p class="text-muted mb-5">
@@ -2362,6 +2366,189 @@
               Get your inventory delivered quickly with full tracking and
               insurance
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Our Customers Say -->
+    <section id="testimonials" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-2">What Our Customers Say</h2>
+        <p class="text-center text-muted mb-5">
+          Join thousands of satisfied wholesale buyers who trust Xcess Limited
+        </p>
+
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="card-text text-muted mb-4">
+                  "Xcess Limited has been our go-to source for liquidation inventory for over 2 years. The quality and pricing are consistently excellent."
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; font-weight: bold;">
+                    SJ
+                  </div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">Sarah Johnson</h6>
+                    <small class="text-muted">Retail Solutions Inc.</small>
+                    <br>
+                    <small class="text-muted">Atlanta, GA</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="card-text text-muted mb-4">
+                  "The auction system is transparent and fair. We've been able to grow our business significantly thanks to the great deals we find here."
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; font-weight: bold;">
+                    MC
+                  </div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">Mike Chen</h6>
+                    <small class="text-muted">Electronics Resale Pro</small>
+                    <br>
+                    <small class="text-muted">Los Angeles, CA</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="card-text text-muted mb-4">
+                  "Customer service is outstanding. They helped us understand the process and now we're regular buyers. Highly recommend!"
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; font-weight: bold;">
+                    LR
+                  </div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">Lisa Rodriguez</h6>
+                    <small class="text-muted">Fashion Forward Wholesale</small>
+                    <br>
+                    <small class="text-muted">Miami, FL</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="card-text text-muted mb-4">
+                  "Great experience! The variety of products available is impressive, and we've found some amazing deals that have boosted our inventory."
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; font-weight: bold;">
+                    JM
+                  </div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">James Martinez</h6>
+                    <small class="text-muted">Multi-Category Retail</small>
+                    <br>
+                    <small class="text-muted">Phoenix, AZ</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="card-text text-muted mb-4">
+                  "The selection and prices are unbeatable. We've expanded our product line and increased profits thanks to Xcess Limited."
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; font-weight: bold;">
+                    RA
+                  </div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">Rachel Adams</h6>
+                    <small class="text-muted">Online Liquidation Store</small>
+                    <br>
+                    <small class="text-muted">Seattle, WA</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="card-text text-muted mb-4">
+                  "Fast shipping and reliable service every time. Highly recommend for any business looking for quality liquidation lots."
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; font-weight: bold;">
+                    DW
+                  </div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">David Wilson</h6>
+                    <small class="text-muted">Wholesale Distribution Co.</small>
+                    <br>
+                    <small class="text-muted">Chicago, IL</small>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2554,7 +2741,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="site-footer text-white mt-5">
+    <footer id="contact" class="site-footer text-white mt-5">
       <div class="footer-top py-4" style="background: #25408f">
         <div
           class="container d-flex flex-column flex-md-row align-items-center justify-content-between"
@@ -2660,19 +2847,114 @@
           alert("Subscribed: " + email);
           this.reset();
         });
-
-      // back to top
-      const backBtn = document.getElementById("backToTop");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) backBtn.classList.add("visible");
-        else backBtn.classList.remove("visible");
-      });
-      backBtn.addEventListener("click", () =>
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      );
     </script>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Search functionality
+      function performSearch() {
+        const mainSearchInput = document.getElementById("mainSearchInput");
+        const navbarSearchInput = document.getElementById("navbarSearchInput");
+        
+        // Use main search input if available, otherwise navbar search
+        const searchQuery = (mainSearchInput?.value || navbarSearchInput?.value || "").toLowerCase().trim();
+        
+        // Get all product cards
+        const cards = document.querySelectorAll(".col-12.col-sm-6.col-md-3");
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const title = card.querySelector(".card-title")?.textContent?.toLowerCase() || "";
+          const category = card.querySelector(".badge")?.textContent?.toLowerCase() || "";
+          const description = card.querySelector(".card-text")?.textContent?.toLowerCase() || "";
+
+          // Check if search query matches title, category, or description
+          const matches =
+            searchQuery === "" ||
+            title.includes(searchQuery) ||
+            category.includes(searchQuery) ||
+            description.includes(searchQuery);
+
+          if (matches) {
+            card.style.display = "block";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Show "no results" message if needed
+        const resultsContainer = document.querySelector(".row.g-4");
+        let noResultsMsg = resultsContainer?.querySelector(".no-results-msg");
+
+        if (visibleCount === 0 && searchQuery !== "") {
+          if (!noResultsMsg) {
+            noResultsMsg = document.createElement("div");
+            noResultsMsg.className = "no-results-msg col-12 text-center py-5";
+            noResultsMsg.innerHTML =
+              '<p class="text-muted fs-5">No products found matching "' +
+              searchQuery +
+              '"</p>';
+            resultsContainer.appendChild(noResultsMsg);
+          }
+        } else if (noResultsMsg) {
+          noResultsMsg.remove();
+        }
+      }
+
+      // Sync both search inputs
+      document.addEventListener("DOMContentLoaded", function () {
+        const mainSearchInput = document.getElementById("mainSearchInput");
+        const navbarSearchInput = document.getElementById("navbarSearchInput");
+
+        if (mainSearchInput && navbarSearchInput) {
+          mainSearchInput.addEventListener("input", function () {
+            navbarSearchInput.value = this.value;
+          });
+
+          navbarSearchInput.addEventListener("input", function () {
+            mainSearchInput.value = this.value;
+            performSearch();
+          });
+        }
+      });
+    </script>
+
+    <script>
+      // smooth scroll and active nav handling
+      document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+        const sections = Array.from(navLinks).map((l) => document.querySelector(l.getAttribute('href')));
+
+        function onScroll() {
+          const scrollPos = window.scrollY + 120; // adjust offset for navbar height
+          let currentId = '';
+          sections.forEach((sec) => {
+            if (sec && sec.offsetTop <= scrollPos) currentId = '#' + sec.id;
+          });
+          navLinks.forEach((link) => {
+            if (link.getAttribute('href') === currentId) link.classList.add('active');
+            else link.classList.remove('active');
+          });
+        }
+
+        navLinks.forEach((link) => {
+          link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            navLinks.forEach((ln) => ln.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+      });
+    </script>
 
     <script>
       // populate and show modal when "More" clicked
